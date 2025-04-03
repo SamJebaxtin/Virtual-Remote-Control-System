@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRCS</title>
+   <script src="Java.js"></script> 
+    
+</head>
+<body onload="showScreen('optionScreen')">
+   
+    <h1> Virtual Remote Control System</h1>
+    <div id="optionScreen" class="container active">
+        
+        <h2>Select an Option</h2>
+        <button class="btn btn-blue" onclick="openFile()">Open File</button>
+        <button class="btn btn-green" onclick="showScreen('fileScreen')">Create File</button>
+    </div>
+
+    <div id="fileScreen" class="container">
+        <h2>Enter Details</h2>
+        <input type="text" id="firstName" placeholder="Name">
+        <input type="text" id="lastName" placeholder="PC Name">
+        <input type="number" id="acCount" placeholder="Number of AC Pins">
+        <input type="number" id="dcCount" placeholder="Number of DC Pins">
+        <button class="btn btn-green" onclick="createFile()">Create</button>
+		<button class="btn btn-back" onclick="showScreen('optionScreen')">Back</button>
+    </div>
+
+    <div id="switchScreen" class="container">
+        <h3 id="fileName">File : </h3>
+        <div class="section-title">AC Switches</div>
+        <div id="acContainer" class="switch-container"></div>
+        <div class="section-title">DC Switches</div>
+        <div id="dcContainer" class="switch-container"></div>
+        <button class="btn btn-back" onclick="showScreen('optionScreen')">Back</button>
+    </div>
+
+    <div id="loading" class="loading">Loading...</div>
+</body>
+</html>
